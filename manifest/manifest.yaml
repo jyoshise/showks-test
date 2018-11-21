@@ -25,7 +25,7 @@ metadata:
   labels:
     app: showks-test
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: showks-test
@@ -59,4 +59,3 @@ spec:
         backend:
           serviceName: showks-test
           servicePort: 3000
-
