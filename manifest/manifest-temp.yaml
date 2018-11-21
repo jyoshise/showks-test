@@ -9,8 +9,8 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 3000
-      targetPort: 3000
+    - port: 80
+      targetPort: 80
       protocol: TCP
       name: app-port
   selector:
@@ -36,10 +36,10 @@ spec:
     spec:
       containers:
         - name: showks-test-temp
-          image: containerdaysjp/showks-portal:stg-105423cc57994e9c652e6169066a8add1017fc4d
+          image: nginx
           ports:
             - name: app-port
-              containerPort: 3000
+              containerPort: 80
               protocol: TCP
 
 ---
@@ -60,4 +60,4 @@ spec:
       - path: /
         backend:
           serviceName: showks-test-temp
-          servicePort: 3000
+          servicePort: 80
