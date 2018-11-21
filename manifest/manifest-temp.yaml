@@ -61,3 +61,10 @@ spec:
         backend:
           serviceName: showks-test-temp
           servicePort: 80
+  - host: test.prod.showks.containerdays.jp
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: showks-test-temp
+          servicePort: 80
